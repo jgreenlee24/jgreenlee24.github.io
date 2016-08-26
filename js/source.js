@@ -1,5 +1,6 @@
 var file_index = 1;
-var files = ['./index.html', './js/source.js', './pre-compile/sass/index.scss'];
+var files = ['./index.html', './js/source.js',
+            './pre-compile/sass/index.scss'];
 var imgs = {'html': './img/dev/html5-original.png',
             'angular': './img/dev/angularjs-original.png',
             'csharp': './img/dev/csharp-original.png',
@@ -15,15 +16,15 @@ $(document).ready(function() {
     $('code').hide();
     $('.html').show();
     $('.html .code-content').show();
-    //
-    // //getting code for header code component
-    // $.each(files, function(index, file) {
-    //     $.get(file, function(response) {
-    //         var doctype = file.substr(1, file.length).split('.').pop();
-    //         $('.' + doctype + ' .code-content').text(response);
-    //     });
-    // });
-    //
+
+    //getting code for header code component
+    $.each(files, function(index, file) {
+        $.get(file, function(response) {
+            var doctype = file.substr(1, file.length).split('.').pop();
+            $('.' + doctype + ' .code-content').text(response);
+        }, 'text');
+    });
+
     //adds jQuery.on() for show and hide() events
     $.each(['show', 'hide'], function(i, ev) {
         var el = $.fn[ev];
@@ -38,9 +39,9 @@ $(document).ready(function() {
         $('#fixed-left').fadeToggle('slow');
     });
 
-    //scroll events
+    // scroll events
     $(window).scroll(function() {
-        // enable only after about section has been reached
+        //enable only after about section has been reached
         if ($(this).scrollTop() >= $('#about').position().top) {
             $('#fixed-top').show();
             $('.fixed-left-button').show();
