@@ -68,10 +68,11 @@ $(document).ready(function() {
     hljs.initHighlightingOnLoad();
 
     // start code switch animation
-    // repeat();
+    repeat();
 });
 
 var repeat = function() {
+    console.log("repeat called");
     // load next code-content
     var file = files[file_index++];
     var doctype = file.substr(1, file.length).split('.').pop();
