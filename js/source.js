@@ -16,29 +16,29 @@ $(document).ready(function() {
     $('.html').show();
     $('.html .code-content').show();
 
-    // //getting code for header code component
-    // $.each(files, function(index, file) {
-    //     $.get(file, function(response) {
-    //         var doctype = file.substr(1, file.length).split('.').pop();
-    //         $('.' + doctype + ' .code-content').text(response);
-    //     });
-    // });
-    //
-    // //adds jQuery.on() for show and hide() events
-    // $.each(['show', 'hide'], function(i, ev) {
-    //     var el = $.fn[ev];
-    //     $.fn[ev] = function() {
-    //         this.trigger(ev);
-    //         return el.apply(this, arguments);
-    //     };
-    // });
-    //
-    // //click events
-    // $('.menu-square').click(function() {
-    //     $('#fixed-left').fadeToggle('slow');
-    // });
-    //
-    // //scroll events
+    //getting code for header code component
+    $.each(files, function(index, file) {
+        $.get(file, function(response) {
+            var doctype = file.substr(1, file.length).split('.').pop();
+            $('.' + doctype + ' .code-content').text(response);
+        });
+    });
+
+    //adds jQuery.on() for show and hide() events
+    $.each(['show', 'hide'], function(i, ev) {
+        var el = $.fn[ev];
+        $.fn[ev] = function() {
+            this.trigger(ev);
+            return el.apply(this, arguments);
+        };
+    });
+
+    //click events
+    $('.menu-square').click(function() {
+        $('#fixed-left').fadeToggle('slow');
+    });
+
+    //scroll events
     // $(window).scroll(function() {
     //     // enable only after about section has been reached
     //     if ($(this).scrollTop() >= $('#about').position().top) {
