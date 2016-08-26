@@ -1,0 +1,60 @@
+//native html element styles
+article, header, nav, aside, section, footer {
+display: block;
+min-height: 100px;
+background: hsla(0, 0%, 0%, .4); }
+
+body {
+	//background: url('http://thecodeplayer.com/u/m/wfbg.png');
+	background-color: $bg-color;
+
+	>#main {
+		>nav#fixed-top {
+			position: fixed;
+			z-index: 100;
+			width: 100%;
+		}
+		>nav#fixed-left {
+			position: fixed;
+			width: 50%; height: 100%;
+			//text should align as a centered list
+		}
+		>header {
+
+		}
+		>aside {
+
+		}
+		>article {
+			@include general_spacing;
+			width: 760px; }
+
+		//sticky footer
+		overflow:auto;
+		padding-bottom: 150px;
+	}
+
+	>footer {
+	position: relative;
+	margin-top: -150px;
+	height: 150px;
+	clear:both;
+	color: white;
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.3),
+		 inset 0 0 50px rgba(0, 0, 0, 0.3);
+	background-color: #333;}
+}
+
+article > article {
+overflow: hidden;
+width: 750px;
+margin: 20px 0;
+padding: 5px; }
+
+article > aside {
+width: 150px;
+float: left; }
+
+section {
+float: right;
+width: 590px; }
