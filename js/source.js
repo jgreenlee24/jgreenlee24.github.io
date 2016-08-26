@@ -68,7 +68,7 @@ $(document).ready(function() {
     hljs.initHighlightingOnLoad();
 
     // start code switch animation
-    repeat();
+    // repeat();
 });
 
 var repeat = function() {

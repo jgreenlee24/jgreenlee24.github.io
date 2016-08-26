@@ -8,8 +8,6 @@ html
         link(type="text/css" rel="stylesheet" href="css/index.css")
         // highlight.js
         link(type="text/css" rel="stylesheet" href="css/highlight/styles/androidstudio.css")
-        // developer icons
-        link(type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css")
     
     body
         div#main
@@ -28,20 +26,20 @@ html
                             a(class="nav-#{val}" onclick="scrollTo('#{val}')")=val
                         include ../includes/menu-btn.jade
                 
-                    article
-                        div.code-container
-                            img.code-lang(src="./img/dev/html5-original.png")
-                            pre
-                                code.html
-                                    div.code-content
-                            pre
-                                code.js
-                                    div.code-content
-                            pre
-                                code.scss
-                                    div.code-content
-                            div#progress
-                                div#bar
+                    //- article
+                    //-     div.code-container
+                    //-         img.code-lang(src="./img/dev/html5-original.png")
+                    //-         pre
+                    //-             code.html
+                    //-                 div.code-content
+                    //-         pre
+                    //-             code.js
+                    //-                 div.code-content
+                    //-         pre
+                    //-             code.scss
+                    //-                 div.code-content
+                    //-         div#progress
+                    //-             div#bar
                     div.push
                 footer
                     hi justin greenlee
