@@ -9,9 +9,7 @@ html
         link(type="text/css" rel="stylesheet" href="css/highlight/styles/ir-black.css")
     
     body
-        .bg-1
-        .bg-2
-        .bg-3
+        .bg
 
         div#homepage
             header
@@ -24,34 +22,38 @@ html
                     .menu-btn-container
                         include ../includes/menu-btn.jade
                     
-            footer
+            article
                 h1 Prof & Personal Websites
-                span.left <
-                span.right >
-                figure.rockwallfcm
-                    i(class="fa fa-search fa-3")
-                    img(src='./img/websites/rockwall-fcm.png')
-                    figcaption Rockwall <b>FCM</b>
-                
-                figure.amishfurniture
-                    i(class="fa fa-search fa-3")
-                    img(src='./img/websites/amish-furniture.png')
-                    figcaption Amish <b>Furniture</b>
-                
-                figure.forbiddentruth
-                    i(class="fa fa-search fa-3")
-                    img(src='./img/websites/forbidden-truth.png')
-                    figcaption Forbidden <b>Truth</b>
+                aside
+                    h2 About Me
+                    include ../includes/lorem-ipsum.jade
+                aside.right
+                    h2 About Me
+                    include ../includes/lorem-ipsum.jade
+                article
+                    span.left <
+                    span.right >
+                    figure.rockwallfcm
+                        i(class="fa fa-search fa-3")
+                        img(src='./img/websites/rockwall-fcm.png')
+                        figcaption Rockwall <b>FCM</b>
                     
-                figure.clocksnthings
-                    i(class="fa fa-search fa-3")
-                    img(src='./img/websites/clocks-n-things.png')
-                    figcaption Clocks-<b>N</b>-Things
-            //- .guitar
-        div.push
-            
-        //- include ../includes/lorem-ipsum.jade
-        
+                    figure.amishfurniture
+                        i(class="fa fa-search fa-3")
+                        img(src='./img/websites/amish-furniture.png')
+                        figcaption Amish <b>Furniture</b>
+                    
+                    figure.forbiddentruth
+                        i(class="fa fa-search fa-3")
+                        img(src='./img/websites/forbidden-truth.png')
+                        figcaption Forbidden <b>Truth</b>
+                        
+                    figure.clocksnthings
+                        i(class="fa fa-search fa-3")
+                        img(src='./img/websites/clocks-n-things.png')
+                        figcaption Clocks-<b>N</b>-Things
+                
+
         //highlight.js
         script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js")
 

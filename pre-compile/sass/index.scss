@@ -90,9 +90,58 @@ html, pre, code, .code-container {
 }
 
 article, header, aside, section, footer {
+	@include noselect;
 	display: block;
-	min-height: 100px;
+	//min-height: 100px;
 }
+
+article {
+	padding-left: 10%;
+	padding-right: 10%;
+	overflow: hidden;
+
+	>header {
+		@include center;
+		font-size: 25px;
+		font-family: 'Source Code Pro';
+		text-align: center;
+		color: white;
+	}
+	>article {
+		overflow: hidden;
+		width: 750px;
+		margin: 20px 0;
+		padding: 5px; }
+
+	>aside {
+		@include respond-to-plus('xlarge') {
+			//float: left; position: relative;
+			@include size(150px, 100%);
+			position: absolute;
+			left: 5%;
+		}
+		@include respond-to-minus('large') {
+			visibility: hidden;
+		}
+	}
+	>aside.right {
+		//float: right; position: relative;
+		position: absolute;
+		width: 150px;
+		left: 80%;
+	}
+}
+
+section {
+	float: right;
+	width: 590px;
+}
+
+h1 { @include font('Sketchy', 40px, bolder);
+	text-transform: uppercase;
+	text-align: center;
+	width: 100%; }
+h2 { @include font('Delius', 20px, bolder); }
 
 nav#top {
 	@include color(white, black);
@@ -126,7 +175,9 @@ nav#top {
 	}
 	@include respond-to-minus('small') {
 		.nav-links a { visibility: hidden; }
-		.menu-square { @include vertical-align;
+		.menu-square {
+			@include vertical-align;
+			cursor: pointer;
 			visibility: visible; opacity: .5;
 			&:hover { opacity: 1; }
 		}
@@ -139,6 +190,13 @@ nav#top {
 		img { @include center; }
 	}
 	.header-social-container {
+		@include respond-to-minus('small') {
+			@include size(100%, 75px);
+			margin-top: 10px;
+			background-color: black;
+			.fa { @include size(25%, 75px);
+				  line-height: 75px; }
+		}
 		@include center;
 		@include size(450px, 50px);
 		margin-top: 30px;
@@ -147,13 +205,14 @@ nav#top {
 		vertical-align: middle;
 		z-index: 200;
 		.fa {
-			@include size(25%, 30px);
-			line-height: 30px;
+			@include respond-to-plus('medium'){
+				@include size(25%, 30px);
+				line-height: 30px;
+			}
 			text-align: center;
 			vertical-align: middle;
 			font-size: 25px;
 			font-weight: lighter;
-			text-decoration: none;
 		}
 		.fa-github {
 			@include outline(#800080);
@@ -203,73 +262,23 @@ nav#fixed-left {
 	position: fixed;
 	//text should align as a centered list
 }
-.fixed-left-button {
-	position: fixed;
-	>.menu-square {
-		margin-top: 30px; margin-left: 30px;
-	}
-}
 
-article {
-	padding-left: 10%;
-	padding-right: 10%;
-
-	>header {
-		@include center;
-		font-size: 25px;
-		font-family: 'Source Code Pro';
-		text-align: center;
-		color: white;
-	}
-	>article {
-		overflow: hidden;
-		width: 750px;
-		margin: 20px 0;
-		padding: 5px; }
-
-	>aside {
-		width: 150px;
-		float: left; }
-}
-
-section {
-	float: right;
-	width: 590px;
-}
 
 body {
 	background-color: $bg-color;
 
 	#homepage {
-		$footer-height: 200px;
-		@include surface($footer-height);
+		@include surface(650px);
 		height: 100vh;
 
 		>header {
-			min-height: 350px;
-			>article {
-				@include respond-to-minus('small') { visibility: hidden; }
-				@include respond-to-plus('medium') {
-					font-family: 'Redacted Script';
-					font-size: 15px;
-					height: 350px;
-					padding: auto;
-				}
-			}
-			>.push {
-				@include push($footer-height);
-			}
+			min-height: 650px;
 		}
-		>footer {
-			@include sticky($footer-height);
-			@include font('Sketchy', 20px, bolder);
+		>article {
+			@include sticky(500px);
 			@include color(transparent, white);
-			h1 {
-				text-transform: uppercase;
-				text-align: center;
-				width: 100%;
-			}
 			span {
+				@include font('Sketchy', 20px, bolder);
 				position: absolute;
 				cursor: pointer;
 				top: 200px;
@@ -297,37 +306,26 @@ button {
 	@include font('Karabine', 25px, lighter);
 	@include general_spacing;
 	@include size(150px, 75px);
-	color: white;
-	cursor: pointer;
 	text-transform: uppercase;
-	//visibility: hidden;
+	cursor: pointer;
+	color: white;
 	&:hover {
 		@include color(white, #333);
 	}
 }
 
 //.class selectors
-.fa-chevron-left {
-	position: absolute;
-
-}
-.fa-chevron-right, .fa-chevron-left {
-	&:hover {
-		color: blue;
-	}
-}
 figure.movable {
 	@include thick-paper;
 	@include noselect;
-	margin: 0 auto;
 	background-color: white;
 	position: absolute;
-	top: 80%;
-	left: 50%;
+	top: 30%; left: 50%;
+	margin: 0 auto;
 	margin-right: -50%;
-	transform: translate(-50%, -20%);
 	text-align: center;
 	overflow: hidden;
+	transform: translate(-50%, -20%);
 	-webkit-filter: grayscale(1);
 			filter: grayscale(1);
 
@@ -393,69 +391,22 @@ figure.movable {
 	@include size(450px, 350px);
 }
 
+.fixed-left-button {
+	position: fixed;
+	>.menu-square {
+		margin-top: 30px; margin-left: 30px;
+	}
+}
+
 .lorem-ipsum {
 	color: white;
 }
-.guitar {
-	@include size(500px, 250px);
-	background: url('../img/prev/seagull.png')  no-repeat center center;
-	background-size: 500px;
-	position: absolute;
-	//transform: rotate(-65deg);
-	opacity: .8;
-	right: 0;
-	bottom: 0;
-}
-.bg-1, .bg-2, .bg-3 {
+.bg {
+	@include size(100%, 100vh);
+	background: url('../img/prev/desk_photo_2.jpeg') no-repeat center center fixed;
 	opacity: .5;
-	z-index: -200;
 	position: fixed;
 }
-.bg-2 {
-	background: url('../img/prev/desk_photo_2.jpeg') no-repeat center center fixed;
-	@include size(100%, 100vh);
-}
-//.bg-1 {
-//	@include respond-to-minus('small') {
-//		visibility: hidden;
-//	}
-//	@include respond-to-plus('medium') {
-//		@include cover('../img/prev/laptop_code.jpg');
-//		@include size(33%, 100vh);
-//	}
-//}
-//.bg-2 {
-	//background: url('../img/prev/desk_photo_2.jpeg') no-repeat center center fixed;
-	//@include respond-to-minus('small') {
-	//	@include size(100%, 100vh);
-	//}
-	//@include respond-to-plus('medium') {
-	//	@include size(33%, 100vh);
-	//	margin-left: 33%;
-	//}
-//}
-//.bg-3 {
-//	@include respond-to-minus('small') {
-//		visibility: hidden;
-//	}
-//	@include respond-to-plus('medium') {
-//		@include cover('../img/cafe.jpg');
-//		@include size(33%, 100vh);
-//		margin-left: 66%;
-//		opacity: .5;
-//	}
-//}
 .hideme {
 	opacity: 0;
-}
-
-.menu-square {
-	cursor: pointer;
-}
-
-#canvasElement {
-	@include size(200px, 200px);
-    @include center;
-	position: fixed;
-    z-index: -100;
 }

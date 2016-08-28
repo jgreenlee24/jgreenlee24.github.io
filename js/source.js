@@ -33,9 +33,4 @@ $(document).ready(function() {
             return el.apply(this, arguments);
         };
     });
-
-    //click events
-    $('.menu-square').click(function() {
-        $('#fixed-left').fadeToggle('slow');
-    });
 });
