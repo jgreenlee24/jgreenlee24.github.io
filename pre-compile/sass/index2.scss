@@ -1,0 +1,394 @@
+// out: ../../css/index.min.css
+
+@import 'response.scss';
+@import 'paper.scss';
+@import 'typed.scss';
+
+/*basic reset*/
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+/*preventing certain elements from using their default border/bg styles*/
+form, input, textarea, table, button, select, optgroup, option {
+	font: inherit; color: inherit; background: transparent;
+}
+
+html, body {height: 100%;}
+
+//mixins
+@mixin center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@mixin position($top, $right, $bottom, $left) {
+
+}
+@mixin color($bgcolor, $color) {
+	background-color: $bgcolor;
+	color: $color;
+}
+@mixin font($family, $size, $weight) {
+	font-family: $family;
+	font-size: $size;
+	font-weight: $weight;
+}
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+@mixin wireframe {
+	background: hsla(0, 0%, 0%, .4);
+}
+@mixin surface($stickyheight) { // for adding stickies
+	min-height: 100%;
+	margin: 0 auto -$stickyheight;
+}
+@mixin push($height) {
+	height: $height;
+}
+@mixin sticky($height) {
+	position: relative;
+	margin-top: -$height;
+	height: $height;
+	clear:both;
+}
+@mixin cover($url) {
+	background: url($url) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+@mixin outline($color) {
+	-webkit-text-stroke: 1px $color;
+}
+
+//color varables
+$bg-color: black;
+
+//native html element styles
+html, pre, code, .code-container {
+	::-webkit-scrollbar {
+    	display: none;
+	}
+}
+
+article, header, aside, section, footer {
+	display: block;
+	min-height: 100px;
+}
+
+nav#top {
+	@include wireframe;
+	@include respond-to-plus('medium') {
+		font-family: 'Delius';
+		font-weight: 10;
+		text-align: center;
+		line-height: 100px;
+		color: white;
+		a {
+			visibility: visible;
+			margin-left: 30px;
+			margin-right: 30px;
+			&:hover {
+				cursor: pointer;
+				color: #0760FE;
+				font-weight: 900;
+			}
+		}
+		.menu-square { visibility: hidden;}
+		.logo { visibility: visible; }
+	}
+	@include respond-to-minus('small') {
+		a { visibility: hidden; }
+		.menu-square { visibility: visible; }
+		.logo { visibility: hidden; }
+	}
+
+	height: 100px;
+}
+
+nav#fixed-top {
+	@include thick-paper;
+	@include size(100%, 50px);
+	@include color(black, white);
+	font: 'Delius' bolder;
+	text-align: center;
+	position: fixed;
+	line-height: 50px;
+	z-index: 100;
+}
+
+nav#fixed-left {
+	@include size(50%, 100%);
+	@include color(black, white);
+	position: fixed;
+	//text should align as a centered list
+}
+.fixed-left-button {
+	position: fixed;
+	>.menu-square {
+		margin-top: 30px; margin-left: 30px;
+	}
+}
+
+article {
+	padding-left: 10%;
+	padding-right: 10%;
+
+	>header {
+		@include center;
+		font-size: 25px;
+		font-family: 'Source Code Pro';
+		text-align: center;
+		color: white;
+	}
+	>article {
+		overflow: hidden;
+		width: 750px;
+		margin: 20px 0;
+		padding: 5px; }
+
+	>aside {
+		width: 150px;
+		float: left; }
+}
+
+section {
+	float: right;
+	width: 590px;
+}
+
+body {
+	background-color: $bg-color;
+
+	#homepage {
+		$footer-height: 200px;
+		@include cover("../img/cafe.jpg");
+		@include surface($footer-height);
+		height: 100vh;
+
+		>header {
+			min-height: 350px;
+			>article {
+				@include respond-to-minus('small') { visibility: hidden; }
+				@include respond-to-plus('medium') {
+					font-family: 'Redacted Script';
+					font-size: 15px;
+					height: 350px;
+					padding: auto;
+				}
+			}
+			>.push {
+				@include push($footer-height);
+			}
+		}
+		>footer {
+			@include sticky($footer-height);
+			@include font('Source Code Pro', 30px, bolder);
+			text-align: center;
+			text-transform: uppercase;
+			color: white;
+			width: 100%;
+		}
+		.header-social-container {
+			@include respond-to-minus('small') { visibility: hidden; }
+			@include respond-to-plus('medium') {
+				z-index: 200;
+				position: absolute;
+				margin-top: -50px;
+				margin-left: 10px;
+				.fa {
+					@include size(30px, 30px);
+					line-height: 30px;
+					text-align: center;
+					vertical-align: middle;
+					font-size: 25px;
+					font-weight: lighter;
+					text-decoration: none;
+					//padding-left: 20px;
+				}
+				.fa-facebook {
+					@include outline(#3b5999);
+					color: transparent;
+					&:hover {
+						@include color(#3b5999, white);
+					}
+				}
+				.fa-linkedin {
+					@include outline(#0077B5);
+					color: transparent;
+					&:hover {
+						@include color(#0077B5, white);
+					}
+				}
+				.fa-paper-plane {
+					@include outline(#09b83e);
+					color: transparent;
+					&:hover {
+						@include color(#09b83e, white);
+					}
+				}
+			}
+		}
+	}
+	#about, #services, #work {
+		text-align: center;
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+}
+
+#main{
+	>.push {
+		height: 150px;
+	}
+	>footer {
+		@include sticky(150px);
+		@include color(#333, white);
+		box-shadow: 0 0 50px rgba(0, 0, 0, 0.3),
+			 inset 0 0 50px rgba(0, 0, 0, 0.3);
+	}
+}
+
+button {
+	@include center;
+	@include font('Source Code Pro', 15px, lighter);
+	@include general_spacing;
+	@include size(150px, 75px);
+	color: white;
+	cursor: pointer;
+	text-transform: uppercase;
+	&:hover {
+		@include color(white, #333);
+	}
+}
+
+#progress {
+	@include size(100%, 10px);
+    position: relative;
+    background-color: black;
+	#bar {
+		@include size(1%, 100%);
+	    position: absolute;
+	    background-color: grey;
+	}
+}
+
+#about {
+	p {
+		@include general_spacing;
+		font-family: 'Source Code Pro';
+		font-weight: lighter;
+		color: white;
+	}
+	img {
+		width: 400px;
+	}
+}
+
+#services {
+	p {
+		@include general_spacing;
+		font-family: 'Source Code Pro';
+		font-weight: lighter;
+		color: white;
+	}
+
+	.columns-5 {
+		@include center;
+		width: 400px;
+	}
+}
+
+#work {
+	color: white;
+	font-family: 'Source Code Pro';
+	h1 {
+		@include outline(white);
+		color: black;
+		font-size: 40px;
+	}
+	h1, h2, p, img {
+		@include general_spacing;
+	}
+	img {
+		@include size(100px, 100px);
+	}
+}
+
+//.class selectors
+.hideme {
+	opacity: 0;
+}
+.musician {
+	color: #3b5999;
+}
+.developer {
+	color: #0077B5;
+}
+.theologian {
+	color: #09b83e;
+}
+.columns-1 {
+	@include container(100%, 1);
+}
+
+.columns-2 {
+	@include container(100%, 2);
+}
+
+.columns-5 {
+	@include container(100%, 5);
+}
+
+.menu-square {
+	cursor: pointer;
+}
+
+.code-container {
+	@include center;
+	@include vertical-align;
+
+	width: 500px;
+
+	.code-lang {
+		@include size(auto, 60px);
+		z-index: layer('above');
+		position: absolute;
+		line-height: 60px;
+		opacity: .5;
+		&:hover {
+			color: white;
+			cursor: pointer;
+			opacity: 1;
+		}
+	}
+	.code-content {
+		font-family: 'Consolas';
+		height: 210px;
+	}
+}
+
+//#id selectors
+#footer {
+	text-align: center;
+	span {
+		@include general_spacing;
+		font: 'Source Code Pro' 20px;
+	}
+}
+
+#canvasElement {
+	@include size(200px, 200px);
+    @include center;
+	position: fixed;
+    z-index: -100;
+}

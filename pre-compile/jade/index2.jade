@@ -1,0 +1,103 @@
+// output:../../index.html, pretty: true
+
+doctype html
+html
+    head
+        title Sample Website
+        link(type="text/css" rel="stylesheet" href="css/index.min.css")
+        link(type="text/css" rel="stylesheet" href="css/index.css")
+        link(type="text/css" rel="stylesheet" href="css/highlight/styles/ir-black.css")
+    
+    body
+        div#main
+            
+            div.fixed-left-button
+                include ../includes/menu-btn.jade
+                
+            nav#fixed-left
+                each val in ['homepage', 'about', 'services', 'work']
+                    a(class="nav-#{val}" onclick="scrollTo('#{val}')")=val
+
+            div#homepage
+                header
+                    nav#top
+                        each val in ['homepage', 'about', 'services', 'work']
+                            a(class="nav-#{val}" onclick="scrollTo('#{val}')")=val
+                        include ../includes/menu-btn.jade
+                
+                    article
+                        div.code-container
+                            img.code-lang(src="./img/dev/html5-original.png")
+                            pre
+                                code.html
+                                    div.code-content
+                            pre
+                                code.js
+                                    div.code-content
+                            pre
+                                code.scss
+                                    div.code-content
+                            div#progress
+                                div#bar
+                    div.push
+                footer
+                    hi justin greenlee
+                    button(onclick="scrollTo('work')") See Work
+                include ../includes/social-header.jade
+            
+            div#about
+                article
+                    header 
+                        span.musician Musician 
+                        span.developer Developer 
+                        span.theologian Theologian
+                    img.hideme(src='./img/me.jpg')
+                    include ../includes/about.jade
+                    
+            div#services
+                article
+                    header Here's what I have to offer...
+                    div.columns-5
+                        img.hideme(src='./img/dev/html5-original.png')
+                        img.hideme(src="./img/dev/angularjs-original.png")
+                        img.hideme(src='./img/dev/csharp-original.png')
+                        img.hideme(src='./img/dev/sass-original.png')
+                        img.hideme(src='./img/dev/nodejs-original.png')
+                    include ../includes/services.jade
+                    
+            div#work
+                article
+                    header Check out some of my latest projects...
+                    h1 Website Designs
+                    h2 Amish Furniture of Rockwall
+                    p Freelance project for local company
+                    img.hideme(src='./img/websites/amish-furniture.png')
+                    h2 Clocks-N-Things
+                    p Freelance project for another local company
+                    img.hideme(src='./img/websites/clocks-n-things.png')
+                    h2 Rockwall FCM
+                    p Project for school club
+                    img.hideme(src='./img/websites/rockwall-fcm.png')
+                    h2 Forbidden Truth
+                    p Game project website
+                    img.hideme(src='./img/websites/forbidden-truth.png')
+                    
+                    
+            div.push
+            footer#footer
+
+        //highlight.js
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js")
+
+        //font awesome icon set
+        script(src='https://use.fontawesome.com/02b2bc5fda.js')
+            
+        //jQuery plugins
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+            
+        //unused jQuery plugins    
+        //- script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/0.10.12/js/jquery.terminal.min.js')
+        //- script(src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js')
+        
+        //main scripts
+        script(src="js/source.js")

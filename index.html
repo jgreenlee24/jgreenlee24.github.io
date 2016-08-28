@@ -4,24 +4,17 @@
     <title>Sample Website</title>
     <link type="text/css" rel="stylesheet" href="css/index.min.css">
     <link type="text/css" rel="stylesheet" href="css/index.css">
-    <link type="text/css" rel="stylesheet" href="css/highlight/styles/androidstudio.css">
+    <link type="text/css" rel="stylesheet" href="css/highlight/styles/ir-black.css">
   </head>
   <body>
-    <div id="main">
-      <div class="fixed-left-button">
-        <div onclick="showMenu()" class="menu-square">
-          <div class="menu-bars">
-            <div class="menu-bar"></div>
-            <div class="menu-bar"></div>
-            <div class="menu-bar"></div>
-          </div>
-        </div>
-      </div>
-      <nav id="fixed-left"><a onclick="scrollTo('homepage')" class="nav-homepage">homepage</a><a onclick="scrollTo('about')" class="nav-about">about</a><a onclick="scrollTo('services')" class="nav-services">services</a><a onclick="scrollTo('work')" class="nav-work">work</a>
-      </nav>
-      <div id="homepage">
-        <header>
-          <nav id="top"><a onclick="scrollTo('homepage')" class="nav-homepage">homepage</a><a onclick="scrollTo('about')" class="nav-about">about</a><a onclick="scrollTo('services')" class="nav-services">services</a><a onclick="scrollTo('work')" class="nav-work">work</a>
+    <div class="bg-1"></div>
+    <div class="bg-2"></div>
+    <div class="bg-3"></div>
+    <div id="homepage">
+      <header>
+        <nav id="top"><img src="./img/sketchy_name.png">
+          <div class="header-social-container"><a href="https://github.com/jgreenlee24"><i class="fa fa-github fa-3"></i></a><a href="https://www.facebook.com/justin.greenlee.3"><i class="fa fa-facebook fa-3"></i></a><a href="https://www.linkedin.com/in/justin-greenlee-60306497"><i class="fa fa-linkedin"></i></a><a href="mailto:jgreenlee24@yahoo.com"><i class="fa fa-paper-plane"></i></a></div>
+          <div class="menu-btn-container">
             <div onclick="showMenu()" class="menu-square">
               <div class="menu-bars">
                 <div class="menu-bar"></div>
@@ -29,69 +22,32 @@
                 <div class="menu-bar"></div>
               </div>
             </div>
-          </nav>
-          <article>
-            <div class="code-container"><img src="./img/dev/html5-original.png" class="code-lang">
-              <pre><code class="html">
-                  <div class="code-content"></div></code></pre>
-              <pre><code class="js">
-                  <div class="code-content"></div></code></pre>
-              <pre><code class="scss">
-                  <div class="code-content"></div></code></pre>
-              <div id="progress">
-                <div id="bar"></div>
-              </div>
-            </div>
-          </article>
-          <div class="push"></div>
-        </header>
-        <footer>
-          <hi>justin greenlee</hi>
-          <button onclick="scrollTo('work')">See Work</button>
-        </footer>
-        <div class="header-social-container"><a href="https://www.facebook.com/justin.greenlee.3"><i class="fa fa-facebook fa-3"></i></a><a href="https://www.linkedin.com/in/justin-greenlee-60306497"><i class="fa fa-linkedin"></i></a><a href="mailto:jgreenlee24@yahoo.com"><i class="fa fa-paper-plane"></i></a></div>
-      </div>
-      <div id="about">
-        <article>
-          <header> <span class="musician">Musician </span><span class="developer">Developer </span><span class="theologian">Theologian</span></header><img src="./img/me.jpg" class="hideme">
-          <p>Web dev geek from Dallas, TX with a B.S. in Computer Science from Harding University.</p>
-          <p>Pursuing UI/UX opportunities. Open for relocation.</p>
-          <p>Enjoys french press coffee, disc golf, acoustic guitar, and deep discussion.</p>
-        </article>
-      </div>
-      <div id="services">
-        <article>
-          <header>Here's what I have to offer...</header>
-          <div class="columns-5"><img src="./img/dev/html5-original.png" class="hideme"><img src="./img/dev/angularjs-original.png" class="hideme"><img src="./img/dev/csharp-original.png" class="hideme"><img src="./img/dev/sass-original.png" class="hideme"><img src="./img/dev/nodejs-original.png" class="hideme"></div>
-          <p>Front-end Development: I am familiar with MEAN Stack (MongoDB, Express, AngularJS, and Node) and have professionally made web components using HTML templating languages like Handlebars and Polymer Web Components. Since school, I’ve been pursuing learning new languages and frameworks on my own, including Angular2, Sass and Jade.</p>
-          <p>Back-end Development: I've also worked with SQL server in creating and managing databases both professionally and while in school. </p>
-          <p>Communication Skills: I prefer work environments that are more collaborative. During my second internship, I had the opportunity to work with UX designers and UI developers in an Agile Development environment, acting as a middleman between our designers and developers. Being one of the few people who knew the framework, I introduced several co-workers (UX, interns, and new hires) to several core aspects of the framework, such as routing, linked data and databinding.</p>
-        </article>
-      </div>
-      <div id="work">
-        <article>
-          <header>Check out some of my latest projects...</header>
-          <h1>Website Designs</h1>
-          <h2>Amish Furniture of Rockwall</h2>
-          <p>Freelance project for local company</p><img src="./img/websites/amish-furniture.png" class="hideme">
-          <h2>Clocks-N-Things</h2>
-          <p>Freelance project for another local company</p><img src="./img/websites/clocks-n-things.png" class="hideme">
-          <h2>Rockwall FCM</h2>
-          <p>Project for school club</p><img src="./img/websites/rockwall-fcm.png" class="hideme">
-          <h2>Forbidden Truth</h2>
-          <p>Game project website</p><img src="./img/websites/forbidden-truth.png" class="hideme">
-        </article>
-      </div>
-      <div class="push"></div>
-      <footer id="footer"></footer>
+          </div>
+        </nav>
+      </header>
+      <footer>
+        <h1>Prof & Personal Websites</h1><span class="left"><</span><span class="right">></span>
+        <figure class="rockwallfcm"><i class="fa fa-search fa-3"></i><img src="./img/websites/rockwall-fcm.png">
+          <figcaption>Rockwall <b>FCM</b></figcaption>
+        </figure>
+        <figure class="amishfurniture"><i class="fa fa-search fa-3"></i><img src="./img/websites/amish-furniture.png">
+          <figcaption>Amish <b>Furniture</b></figcaption>
+        </figure>
+        <figure class="forbiddentruth"><i class="fa fa-search fa-3"></i><img src="./img/websites/forbidden-truth.png">
+          <figcaption>Forbidden <b>Truth</b></figcaption>
+        </figure>
+        <figure class="clocksnthings"><i class="fa fa-search fa-3"></i><img src="./img/websites/clocks-n-things.png">
+          <figcaption>Clocks-<b>N</b>-Things</figcaption>
+        </figure>
+      </footer>
     </div>
+    <div class="push"></div>
     <!--highlight.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
     <!--font awesome icon set-->
     <script src="https://use.fontawesome.com/02b2bc5fda.js"></script>
     <!--jQuery plugins-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!--unused jQuery plugins    -->
     <!--main scripts-->
     <script src="js/source.js"></script>
   </body>

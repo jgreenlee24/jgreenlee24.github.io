@@ -69,6 +69,15 @@ html, body {height: 100%;}
 @mixin outline($color) {
 	-webkit-text-stroke: 1px $color;
 }
+@mixin noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;           /* Non-prefixed version, currently
+									not supported by any browser */
+}
 
 //color varables
 $bg-color: black;
@@ -86,33 +95,95 @@ article, header, aside, section, footer {
 }
 
 nav#top {
-	@include wireframe;
+	@include color(white, black);
+	@include size(100%, 100px);
+	position: absolute; top: 0; left: 0;
 	@include respond-to-plus('medium') {
 		font-family: 'Delius';
 		font-weight: 10;
-		text-align: center;
 		line-height: 100px;
-		color: white;
-		a {
-			visibility: visible;
-			margin-left: 30px;
-			margin-right: 30px;
-			&:hover {
-				cursor: pointer;
-				color: #0760FE;
-				font-weight: 900;
+		.nav-links {
+			position: absolute;
+			left: 500px;
+			a {
+				opacity: .5;
+				margin-left: 30px;
+				margin-right: 30px;
+				&:hover {
+					opacity: 1;
+					cursor: pointer;
+					font-weight: 900;
+				}
 			}
 		}
-		.menu-square { visibility: hidden;}
+		img {
+			position: absolute;
+			top: 0; left: 0;
+		}
+		.menu-square { visibility: hidden; }
 		.logo { visibility: visible; }
+		.menu-btn-container { visibility: hidden; }
 	}
 	@include respond-to-minus('small') {
-		a { visibility: hidden; }
-		.menu-square { visibility: visible; }
+		.nav-links a { visibility: hidden; }
+		.menu-square { @include vertical-align;
+			visibility: visible; opacity: .5;
+			&:hover { opacity: 1; }
+		}
+		.menu-btn-container {
+			@include size(100%, 75px)
+			@include color(black, white);
+			visibility: visible;
+		}
 		.logo { visibility: hidden; }
+		img { @include center; }
 	}
-
-	height: 100px;
+	.header-social-container {
+		@include center;
+		@include size(450px, 50px);
+		margin-top: 30px;
+		position: absolute;
+		text-align: center;
+		vertical-align: middle;
+		z-index: 200;
+		.fa {
+			@include size(25%, 30px);
+			line-height: 30px;
+			text-align: center;
+			vertical-align: middle;
+			font-size: 25px;
+			font-weight: lighter;
+			text-decoration: none;
+		}
+		.fa-github {
+			@include outline(#800080);
+			color: transparent;
+			&:hover {
+				@include color(#800080, white);
+			}
+		}
+		.fa-facebook {
+			@include outline(#3b5999);
+			color: transparent;
+			&:hover {
+				@include color(#3b5999, white);
+			}
+		}
+		.fa-linkedin {
+			@include outline(#0077B5);
+			color: transparent;
+			&:hover {
+				@include color(#0077B5, white);
+			}
+		}
+		.fa-paper-plane {
+			@include outline(#09b83e);
+			color: transparent;
+			&:hover {
+				@include color(#09b83e, white);
+			}
+		}
+	}
 }
 
 nav#fixed-top {
@@ -171,7 +242,6 @@ body {
 
 	#homepage {
 		$footer-height: 200px;
-		@include cover("../img/cafe.jpg");
 		@include surface($footer-height);
 		height: 100vh;
 
@@ -192,195 +262,195 @@ body {
 		}
 		>footer {
 			@include sticky($footer-height);
-			@include font('Source Code Pro', 30px, bolder);
-			text-align: center;
-			text-transform: uppercase;
-			color: white;
-			width: 100%;
-		}
-		.header-social-container {
-			@include respond-to-minus('small') { visibility: hidden; }
-			@include respond-to-plus('medium') {
-				z-index: 200;
+			@include font('Sketchy', 20px, bolder);
+			@include color(transparent, white);
+			h1 {
+				text-transform: uppercase;
+				text-align: center;
+				width: 100%;
+			}
+			span {
 				position: absolute;
-				margin-top: -50px;
-				margin-left: 10px;
-				.fa {
-					@include size(30px, 30px);
-					line-height: 30px;
-					text-align: center;
-					vertical-align: middle;
-					font-size: 25px;
-					font-weight: lighter;
-					text-decoration: none;
-					//padding-left: 20px;
-				}
-				.fa-facebook {
-					@include outline(#3b5999);
-					color: transparent;
-					&:hover {
-						@include color(#3b5999, white);
-					}
-				}
-				.fa-linkedin {
-					@include outline(#0077B5);
-					color: transparent;
-					&:hover {
-						@include color(#0077B5, white);
-					}
-				}
-				.fa-paper-plane {
-					@include outline(#09b83e);
-					color: transparent;
-					&:hover {
-						@include color(#09b83e, white);
-					}
+				cursor: pointer;
+				top: 200px;
+				font-size: 40px;
+				&:hover {
+					color: blue;
 				}
 			}
+			span.left {
+				left:50%;
+				margin-left:-300px;
+				width:500px;
+			}
+			span.right {
+				left:50%;
+				margin-left:300px;
+				width:500px;
+			}
 		}
-	}
-	#about, #services, #work {
-		text-align: center;
-		padding-top: 100px;
-		padding-bottom: 100px;
-	}
-}
-
-#main{
-	>.push {
-		height: 150px;
-	}
-	>footer {
-		@include sticky(150px);
-		@include color(#333, white);
-		box-shadow: 0 0 50px rgba(0, 0, 0, 0.3),
-			 inset 0 0 50px rgba(0, 0, 0, 0.3);
 	}
 }
 
 button {
 	@include center;
-	@include font('Source Code Pro', 15px, lighter);
+	@include font('Karabine', 25px, lighter);
 	@include general_spacing;
 	@include size(150px, 75px);
 	color: white;
 	cursor: pointer;
 	text-transform: uppercase;
+	//visibility: hidden;
 	&:hover {
 		@include color(white, #333);
 	}
 }
 
-#progress {
-	@include size(100%, 10px);
-    position: relative;
-    background-color: black;
-	#bar {
-		@include size(1%, 100%);
-	    position: absolute;
-	    background-color: grey;
+//.class selectors
+.fa-chevron-left {
+	position: absolute;
+
+}
+.fa-chevron-right, .fa-chevron-left {
+	&:hover {
+		color: blue;
 	}
 }
+figure.movable {
+	@include thick-paper;
+	@include noselect;
+	margin: 0 auto;
+	background-color: white;
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -20%);
+	text-align: center;
+	overflow: hidden;
+	-webkit-filter: grayscale(1);
+			filter: grayscale(1);
 
-#about {
-	p {
-		@include general_spacing;
+	.fa-search {
+		@include color(white, black);
+		@include size(30px, 30px);
+		vertical-align: middle;
+		position: absolute;
+		line-height: 30px;
+		font-size: 20px;
+		right: 0;
+		opacity: 0;
+		-webkit-transition: opacity 0.35s;
+		transition: opacity 0.35s;
+	}
+	figcaption {
+		@include color(white, black);
+		@include size(100%, 2em);
 		font-family: 'Source Code Pro';
-		font-weight: lighter;
-		color: white;
+		position: absolute;
+		padding: 2px 8px;
+	}
+	&:hover {
+		outline: 9999px solid rgba(0,0,0,0.5);
+		cursor: pointer;
+		-webkit-filter: none;
+		filter: none;
+		.fa-search {
+			opacity: 1;
+			&:hover {
+				@include color(green, white);
+			}
+		}
+		figcaption {
+			-webkit-transition: -webkit-transform 0.35s;
+			transition: transform 0.35s;
+			-webkit-transform: translate3d(0,-100%,0);
+			transform: translate3d(0,-100%,0);
+		}
 	}
 	img {
-		width: 400px;
+		@include size(100%, 100%);
 	}
 }
 
-#services {
-	p {
-		@include general_spacing;
-		font-family: 'Source Code Pro';
-		font-weight: lighter;
-		color: white;
-	}
-
-	.columns-5 {
-		@include center;
-		width: 400px;
-	}
+.rockwallfcm, .amishfurniture, .forbiddentruth, .clocksnthings {
+	@extend figure.movable;
 }
 
-#work {
+.amishfurniture {
+	@include size(450px, 300px);
+}
+
+.clocksnthings {
+	@include size(450px, 250px);
+}
+
+.forbiddentruth {
+	@include size(500px, 350px);
+}
+
+.rockwallfcm {
+	@include size(450px, 350px);
+}
+
+.lorem-ipsum {
 	color: white;
-	font-family: 'Source Code Pro';
-	h1 {
-		@include outline(white);
-		color: black;
-		font-size: 40px;
-	}
-	h1, h2, p, img {
-		@include general_spacing;
-	}
 }
-
-//.class selectors
+.guitar {
+	@include size(500px, 250px);
+	background: url('../img/prev/seagull.png')  no-repeat center center;
+	background-size: 500px;
+	position: absolute;
+	//transform: rotate(-65deg);
+	opacity: .8;
+	right: 0;
+	bottom: 0;
+}
+.bg-1, .bg-2, .bg-3 {
+	opacity: .5;
+	z-index: -200;
+	position: fixed;
+}
+.bg-2 {
+	background: url('../img/prev/desk_photo_2.jpeg') no-repeat center center fixed;
+	@include size(100%, 100vh);
+}
+//.bg-1 {
+//	@include respond-to-minus('small') {
+//		visibility: hidden;
+//	}
+//	@include respond-to-plus('medium') {
+//		@include cover('../img/prev/laptop_code.jpg');
+//		@include size(33%, 100vh);
+//	}
+//}
+//.bg-2 {
+	//background: url('../img/prev/desk_photo_2.jpeg') no-repeat center center fixed;
+	//@include respond-to-minus('small') {
+	//	@include size(100%, 100vh);
+	//}
+	//@include respond-to-plus('medium') {
+	//	@include size(33%, 100vh);
+	//	margin-left: 33%;
+	//}
+//}
+//.bg-3 {
+//	@include respond-to-minus('small') {
+//		visibility: hidden;
+//	}
+//	@include respond-to-plus('medium') {
+//		@include cover('../img/cafe.jpg');
+//		@include size(33%, 100vh);
+//		margin-left: 66%;
+//		opacity: .5;
+//	}
+//}
 .hideme {
 	opacity: 0;
-}
-.musician {
-	color: #3b5999;
-}
-.developer {
-	color: #0077B5;
-}
-.theologian {
-	color: #09b83e;
-}
-.columns-1 {
-	@include container(100%, 1);
-}
-
-.columns-2 {
-	@include container(100%, 2);
-}
-
-.columns-5 {
-	@include container(100%, 5);
 }
 
 .menu-square {
 	cursor: pointer;
-}
-
-.code-container {
-	@include center;
-	@include vertical-align;
-
-	width: 500px;
-
-	.code-lang {
-		@include size(auto, 60px);
-		z-index: layer('above');
-		position: absolute;
-		line-height: 60px;
-		opacity: .5;
-		&:hover {
-			color: white;
-			cursor: pointer;
-			opacity: 1;
-		}
-	}
-	.code-content {
-		font-family: 'Consolas';
-		height: 210px;
-	}
-}
-
-//#id selectors
-#footer {
-	text-align: center;
-	span {
-		@include general_spacing;
-		font: 'Source Code Pro' 20px;
-	}
 }
 
 #canvasElement {

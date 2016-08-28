@@ -13,6 +13,23 @@
          url("redacted-font/fonts/web/redacted-script-light.otf") format("opentype"),
          url("redacted-font/fonts/web/redacted-script-light.svg#filename") format("svg");
 }
+/* sketch fonts */
+@font-face {
+    font-family: 'Karabine';
+    src: url('fonts/karabine/karabine.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Sketchy';
+    src: url('fonts/sketchy/sketchy.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Urban Sketch';
+    src: url('fonts/urban-sketch/urban.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Tusj';
+    src: url('fonts/tusj/tusj.ttf')  format('truetype');
+}
 
 .lorem-ipsum {
     font-family: 'Redacted Script';
