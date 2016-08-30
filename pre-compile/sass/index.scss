@@ -635,7 +635,8 @@ $devicons: (
 	'css3': #007DC6,
 	'javascript': #DCA420,
 	'jquery': #116AAE,
-	'sass': #CF649A
+	'sass': #CF649A,
+	'atom': #5FB57D
 );
 
 @each $name, $color in $devicons {
