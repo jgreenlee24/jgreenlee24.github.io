@@ -1,13 +1,7 @@
 
 // paper effects
-@mixin paper {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3),
-         inset 0 0 50px rgba(0, 0, 0, 0.2);
-}
-
-@mixin thick-paper {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6),
-         inset 0 0 50px rgba(0, 0, 0, 0.2);
+@mixin paper($weight) {
+    box-shadow: 0 0 5px rgba(0, 0, 0, $weight),
 }
 
 // general spacing helpers
@@ -53,7 +47,7 @@
 
 // other paper effects
 .paper-body {
-    @include paper;
+    @include paper(0.3);
     @include general_indent;
     @include general_spacing;
     background-color: white;

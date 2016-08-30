@@ -40,6 +40,10 @@ $breakpoints: (
     }
 }
 
+@mixin shared { // no purpose except for clarity for responsiveness
+	@content;
+}
+
 // layering
 $layer: (
   above: 10

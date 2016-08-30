@@ -13,17 +13,17 @@ $(document).ready(function() {
     var order = ['.amishfurniture', '.clocksnthings',
                  '.forbiddentruth', '.rockwallfcm'];
     var index = 0;
-    $('.amishfurniture').show();
+    $('.sitesbyjustin').show();
 
-    $('.right').click(function(){
-        $('figure').hide();
-        $(order[++index == 4 ? index = 0 : index]).show();
-    });
-
-    $('.left').click(function(){
-        $('figure').hide();
-        $(order[--index == -1 ? index = 3 : index]).show();
-    });
+    // $('.right').click(function(){
+    //     $('figure').hide();
+    //     $(order[++index == 4 ? index = 0 : index]).show();
+    // });
+    //
+    // $('.left').click(function(){
+    //     $('figure').hide();
+    //     $(order[--index == -1 ? index = 3 : index]).show();
+    // });
 
     //adds jQuery.on() for show and hide() events
     $.each(['show', 'hide'], function(i, ev) {
@@ -33,4 +33,18 @@ $(document).ready(function() {
             return el.apply(this, arguments);
         };
     });
+
+    //getting code for header code component
+    $.each(files, function(index, file) {
+        $.get(file, function(response) {
+            var doctype = file.substr(1, file.length).split('.').pop();
+            $('.' + doctype + ' .code-content').text(response);
+        }, 'text');
+    });
+
+    //get repo data from github
+    $("[data-repo]").github();
+
+    // highlight code
+    hljs.initHighlightingOnLoad();
 });

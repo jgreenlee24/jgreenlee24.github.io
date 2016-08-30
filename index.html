@@ -5,45 +5,36 @@
     <link type="text/css" rel="stylesheet" href="css/index.min.css">
     <link type="text/css" rel="stylesheet" href="css/index.css">
     <link type="text/css" rel="stylesheet" href="css/highlight/styles/ir-black.css">
+    <link type="text/css" rel="stylesheet" href="css/github.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css">
   </head>
   <body>
     <div class="bg"></div>
     <div id="homepage">
       <header>
         <nav id="top"><img src="./img/sketchy_name.png">
-          <div class="header-social-container"><a href="https://github.com/jgreenlee24"><i class="fa fa-github fa-3"></i></a><a href="https://www.facebook.com/justin.greenlee.3"><i class="fa fa-facebook fa-3"></i></a><a href="https://www.linkedin.com/in/justin-greenlee-60306497"><i class="fa fa-linkedin"></i></a><a href="mailto:jgreenlee24@yahoo.com"><i class="fa fa-paper-plane"></i></a></div>
-          <div class="menu-btn-container">
-            <div onclick="showMenu()" class="menu-square">
-              <div class="menu-bars">
-                <div class="menu-bar"></div>
-                <div class="menu-bar"></div>
-                <div class="menu-bar"></div>
-              </div>
-            </div>
-          </div>
         </nav>
+        <nav id="btns"><a href="https://github.com/jgreenlee24" class="button github">github<span><i class="fa fa-github fa-3"></i></span></a><a href="https://preview.c9users.io/jgreenlee24/my_cloud/" class="button cloud9">cloud9 workspace<span><i class="fa fa-cloud fa-3"></i></span></a><a href="https://www.linkedin.com/in/justin-greenlee-60306497" class="button linkedin">linkedin<span><i class="fa fa-linkedin fa-3"></i></span></a></nav>
       </header>
       <article>
-        <h1>Prof & Personal Websites</h1>
-        <aside>
-          <h2>About Me</h2>
-          <div>
-            <h2 class="lorem-ipsum">Lorem ipsum dolor sit amet</h2>
-            <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla, purus in porttitor pellentesque, erat arcu tincidunt diam, dapibus faucibus leo mauris at sapien. In porttitor vehicula sodales. Vivamus massa neque, facilisis eu felis ut, aliquet convallis nisi. Nam elementum tellus vitae gravida fermentum. Nullam et imperdiet leo. Integer ut euismod lorem, in placerat lacus. Curabitur bibendum arcu ut feugiat commodo. Suspendisse ut mi vel orci ullamcorper tincidunt. Nam vitae fringilla nibh. Nullam hendrerit blandit velit eu hendrerit.</p>
-            <p class="lorem-ipsum">Praesent eu enim non massa pellentesque lobortis. In in sagittis dolor. Aliquam non massa erat. Ut aliquet gravida tellus, sed volutpat nibh condimentum et. Nunc quam purus, vehicula quis venenatis et, porttitor vel dolor. Cras facilisis dui id elit bibendum, in ullamcorper leo ultricies. Praesent rutrum lacus sit amet sem convallis, ut interdum dolor vestibulum.</p>
-          </div>
-        </aside>
         <aside class="right">
-          <h2>About Me</h2>
           <div>
-            <h2 class="lorem-ipsum">Lorem ipsum dolor sit amet</h2>
-            <p class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla, purus in porttitor pellentesque, erat arcu tincidunt diam, dapibus faucibus leo mauris at sapien. In porttitor vehicula sodales. Vivamus massa neque, facilisis eu felis ut, aliquet convallis nisi. Nam elementum tellus vitae gravida fermentum. Nullam et imperdiet leo. Integer ut euismod lorem, in placerat lacus. Curabitur bibendum arcu ut feugiat commodo. Suspendisse ut mi vel orci ullamcorper tincidunt. Nam vitae fringilla nibh. Nullam hendrerit blandit velit eu hendrerit.</p>
-            <p class="lorem-ipsum">Praesent eu enim non massa pellentesque lobortis. In in sagittis dolor. Aliquam non massa erat. Ut aliquet gravida tellus, sed volutpat nibh condimentum et. Nunc quam purus, vehicula quis venenatis et, porttitor vel dolor. Cras facilisis dui id elit bibendum, in ullamcorper leo ultricies. Praesent rutrum lacus sit amet sem convallis, ut interdum dolor vestibulum.</p>
+            <h1 class="project_name">sitesbyjustin.com</h1>
+            <p class="technologies"><span class="devicons devicons-git"></span><span class="devicons devicons-html5"></span><span class="devicons devicons-css3"></span><span class="devicons devicons-javascript"></span><span class="devicons devicons-jquery"></span><span class="devicons devicons-sass"></span></p>
+            <p class="project_desc">
+              This website underwent 5 different design phases.
+              The site was created using Sass and Jade for pre-compiled languages,
+              HTML5 and CSS3 for other parts, jQuery for DOM manipulation, 
+              and it is hosted via Git Pages.
+            </p><a href="https://github.com/jgreenlee24" class="button github">view on github<span><i class="fa fa-github fa-3"></i></span></a>
           </div>
         </aside>
-        <article><span class="left"><</span><span class="right">></span>
+        <section>
           <figure class="rockwallfcm"><i class="fa fa-search fa-3"></i><img src="./img/websites/rockwall-fcm.png">
             <figcaption>Rockwall <b>FCM</b></figcaption>
+          </figure>
+          <figure class="sitesbyjustin"><i class="fa fa-search fa-3"></i><img src="./img/websites/sites-by-justin.png">
+            <figcaption>Sites By <b>Justin</b></figcaption>
           </figure>
           <figure class="amishfurniture"><i class="fa fa-search fa-3"></i><img src="./img/websites/amish-furniture.png">
             <figcaption>Amish <b>Furniture</b></figcaption>
@@ -54,15 +45,17 @@
           <figure class="clocksnthings"><i class="fa fa-search fa-3"></i><img src="./img/websites/clocks-n-things.png">
             <figcaption>Clocks-<b>N</b>-Things</figcaption>
           </figure>
-        </article>
+          
+        </section>
       </article>
     </div>
+    <!--jQuery plugins-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/libs/jquery.github.js"></script>
     <!--highlight.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
     <!--font awesome icon set-->
     <script src="https://use.fontawesome.com/02b2bc5fda.js"></script>
-    <!--jQuery plugins-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <!--main scripts-->
     <script src="js/source.js"></script>
   </body>
