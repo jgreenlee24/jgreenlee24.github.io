@@ -10,20 +10,7 @@ var imgs = {'html': './img/dev/html5-original.png',
 $(document).ready(function() {
 
     $('figure').hide();
-    var order = ['.amishfurniture', '.clocksnthings',
-                 '.forbiddentruth', '.rockwallfcm'];
-    var index = 0;
     $('.project_pic').show();
-
-    // $('.right').click(function(){
-    //     $('figure').hide();
-    //     $(order[++index == 4 ? index = 0 : index]).show();
-    // });
-    //
-    // $('.left').click(function(){
-    //     $('figure').hide();
-    //     $(order[--index == -1 ? index = 3 : index]).show();
-    // });
 
     //adds jQuery.on() for show and hide() events
     $.each(['show', 'hide'], function(i, ev) {
@@ -79,7 +66,6 @@ $(document).ready(function() {
         }
 
         //update button
-
 
         //update project data
         $('.project_name').text(p.name);
