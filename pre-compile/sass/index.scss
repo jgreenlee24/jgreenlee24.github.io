@@ -203,6 +203,7 @@ aside.right {
 	p.project_desc {
 		font-family: 'Source Code Pro';
 		font-size: 13px;
+		margin-top: 20px; margin-bottom: 20px;
 	}
 }
 
@@ -559,7 +560,6 @@ figure.movable {
 	@include noselect;
 	@include transition(0.5s);
 	@include filter(brightness(0.9));
-	background-color: white;
 	align-self: center;
 	text-align: center;
 	overflow: hidden;
@@ -602,24 +602,9 @@ figure.movable {
 	}
 }
 
-.rockwallfcm, .amishfurniture, .sitesbyjustin, .forbiddentruth, .clocksnthings {
+.project_pic {
 	@extend figure.movable;
 }
-
-$figure-dimensions: (
-	'amishfurniture': (500px, 350px),
-	'clocksnthings': (450px, 250px),
-	'forbiddentruth': (400px, 350px),
-	'rockwallfcm': (450px, 350px),
-	'sitesbyjustin': (450px, 350px)
-);
-
-@each $name, $size in $figure-dimensions {
-	figure.#{$name} {
-		@include size(nth($size, 1), nth($size, 2));
-	}
-}
-
 .lorem-ipsum {
 	color: white;
 }
@@ -636,7 +621,10 @@ $devicons: (
 	'javascript': #DCA420,
 	'jquery': #116AAE,
 	'sass': #CF649A,
-	'atom': #5FB57D
+	'atom': #5FB57D,
+	'cloud9': #3385BC,
+	'angular': #B92933,
+	'nodejs_small': #8CC84C
 );
 
 @each $name, $color in $devicons {

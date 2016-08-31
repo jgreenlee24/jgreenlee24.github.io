@@ -55,14 +55,13 @@ $(document).ready(function() {
           img: 'sites-by-justin'},
         { name: "Amish Furniture",
           desc: "This was my first freelance project. The website was created using a Flash-based \
-          CMS called Wix. The user experience for this project include wireframing, prototyping, \
+          CMS called Wix. The user experience for this project included wireframing, prototyping, \
           and continuously re-checking her objective and showing my work. I also managed the content \
           that went on the site as well as the hosting.",
           techs: ['flash'],
           img: 'amish-furniture'},
         { name: "Pichu's Cloud",
-          desc: "This file server (cloud) was created using AngularJS, Express, and Multer \
-          for my Web Development II class.",
+          desc: "This file server (cloud) was created using AngularJS, Express, and Multer",
           techs: ['cloud9', 'angular', 'javascript', 'nodejs_small', 'html5', 'css3'],
           img: 'pichu_cloud'},
     ];
