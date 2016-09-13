@@ -273,48 +273,6 @@ nav#top {
 			visibility: visible;
 		}
 	}
-	.header-social-container {
-		@include shared {
-			@include center;
-			position: absolute;
-			text-align: center;
-			vertical-align: middle;
-			z-index: 200;
-		}
-
-		@include respond-to-plus('medium') {
-			top: 0px; right: 0px;
-			.fa { @include size(60px, 32px);
-			line-height: 30px; }
-		}
-
-		@include respond-to-minus('small') {
-			& {
-				@include size(100%, 75px);
-				margin-top: 10px;
-				background-color: black;
-			}
-			.fa {
-				@include size(25%, 75px);
-				line-height: 75px;
-				text-align: center;
-				vertical-align: middle;
-				font-size: 25px;
-				font-weight: lighter;
-			}
-			@each $name, $color in $social-cols {
-				.fa-#{$name} {
-					@include color($color, white);
-					@include transition(.5s);
-					&:hover {
-						@include color(black, transparent);
-						@include outline($color);
-						@include transition(.5s);
-					}
-				}
-			}
-		}
-	}
 }
 nav#fixed-top {
 	@include paper(0.9);
@@ -341,6 +299,78 @@ nav#btns {
 	display: flex;
 	z-index: 300;
 }
+body {
+	background-color: $bg-color;
+}
+
+#homepage {
+	@include surface(75px);
+	height: 100vh;
+
+	>header {
+		@include respond-to-plus('medium') {
+			@include transition(.2s);
+			min-height: 175px;
+		}
+		@include respond-to-minus('small') {
+			@include transition(.5s);
+			min-height: 175px;
+		}
+	}
+	>article {
+		@include sticky(75px);
+		header {
+			@include size(100%, 75px);
+			@include color(#3498db, white);
+			@include center;
+			font: 25px 'Source Code Pro';
+			text-align: center;
+			p { @include vertical-align; }
+			span {
+				@include font('Source Code Pro', 20px, bolder);
+				position: absolute;
+				cursor: pointer;
+				font-size: 40px;
+				&:hover {
+					color: blue;
+				}
+			}
+			span.left {
+				left:50%;
+				top: 15px;
+				margin-left:-200px;
+			}
+			span.right {
+				left:50%;
+				top: 15px;
+				margin-left:200px;
+			}
+		}
+
+		section {
+			@include transition(0.5s);
+			@include shared {
+				display: flex;
+				justify-content: center;
+				label {
+					display: block;
+				}
+				input[type="radio"] {
+					-webkit-appearance: none;
+				}
+			}
+			@include respond-to-plus('medium') {
+				width: 55%;
+				height: calc(100vh - 150px);
+			}
+			@include respond-to-minus('small') {
+				height: calc(100vh - 225px);
+			}
+		}
+	}
+}
+
+//buttons
 .button {
 	@include filter(brightness(0.8));
 	@include general_spacing;
@@ -380,79 +410,6 @@ nav#btns {
 .button.linkedin {
 	@include color(map-get($social-cols, 'linkedin'), white);
 }
-
-body {
-	background-color: $bg-color;
-
-	#homepage {
-		@include surface(75px);
-		height: 100vh;
-
-		>header {
-			@include respond-to-plus('medium') {
-				@include transition(.2s);
-				min-height: 175px;
-			}
-			@include respond-to-minus('small') {
-				@include transition(.5s);
-				min-height: 175px;
-			}
-		}
-		>article {
-			@include sticky(75px);
-			header {
-				@include size(100%, 75px);
-				@include color(#3498db, white);
-				@include center;
-				font: 25px 'Source Code Pro';
-				text-align: center;
-				p { @include vertical-align; }
-				span {
-					@include font('Source Code Pro', 20px, bolder);
-					position: absolute;
-					cursor: pointer;
-					font-size: 40px;
-					&:hover {
-						color: blue;
-					}
-				}
-				span.left {
-					left:50%;
-					top: 15px;
-					margin-left:-200px;
-				}
-				span.right {
-					left:50%;
-					top: 15px;
-					margin-left:200px;
-				}
-			}
-
-			section {
-				@include transition(0.5s);
-				@include shared {
-					display: flex;
-					justify-content: center;
-					label {
-						display: block;
-					}
-					input[type="radio"] {
-						-webkit-appearance: none;
-					}
-				}
-				@include respond-to-plus('medium') {
-					width: 55%;
-					height: calc(100vh - 150px);
-				}
-				@include respond-to-minus('small') {
-					height: calc(100vh - 225px);
-				}
-			}
-		}
-	}
-}
-
-//buttons
 .checkboxes{
 	.check {
 		@include size(9px, 18px);
@@ -524,6 +481,49 @@ body {
 //}
 
 //.class selectors
+.header-social-container {
+	@include shared {
+		@include center;
+		position: absolute;
+		text-align: center;
+		vertical-align: middle;
+		z-index: 200;
+	}
+
+	@include respond-to-plus('medium') {
+		top: 0px; right: 0px;
+		.fa { @include size(60px, 32px);
+		line-height: 30px; }
+	}
+
+	@include respond-to-minus('small') {
+		& {
+			@include size(100%, 75px);
+			margin-top: 10px;
+			background-color: black;
+		}
+		.fa {
+			@include size(25%, 75px);
+			line-height: 75px;
+			text-align: center;
+			vertical-align: middle;
+			font-size: 25px;
+			font-weight: lighter;
+		}
+		@each $name, $color in $social-cols {
+			.fa-#{$name} {
+				@include color($color, white);
+				@include transition(.5s);
+				&:hover {
+					@include color(black, transparent);
+					@include outline($color);
+					@include transition(.5s);
+				}
+			}
+		}
+	}
+}
+
 .code-container {
 	@include respond-to-minus('small') {
 		code {
@@ -585,11 +585,11 @@ figure.movable {
 		opacity: 0;
 	}
 	figcaption {
-		//@include color(white, black);
-		//@include size(100%, 2em);
-		//font-family: 'Source Code Pro';
-		//position: absolute;
-		//padding: 2px 8px;
+		@include color(white, black);
+		@include size(450px, 2em);
+		font-family: 'Source Code Pro';
+		position: absolute;
+		padding: 2px 8px;
 	}
 	&:hover {
 		@include filter(none);

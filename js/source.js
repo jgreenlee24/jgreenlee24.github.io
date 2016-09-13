@@ -79,7 +79,7 @@ $(document).ready(function() {
         //animate everything
         $(".project_name, .project_desc, .technologies, \
           .technologies, .right .button.github, .right .button.cloud9, \
-          .right, .project_pic img")
+          .right, .project_pic img, figcaption")
             .animate({'opacity': 1}, 2000)
             .delay(8000)
             .animate({'opacity': 0}, 2000);
