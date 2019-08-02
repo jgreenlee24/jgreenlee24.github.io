@@ -2,11 +2,15 @@
   "name": "portfolio3",
   "version": "1.0.0",
   "description": "",
-  "main": "source.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node app.js"
   },
   "author": "Justin Greenlee",
   "license": "ISC",
-  "sasslintConfig": "css/.sass-lint.yml",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.4.1"
+  }
 }
