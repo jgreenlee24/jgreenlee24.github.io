@@ -1,0 +1,38 @@
+
+
+/*wireframing fonts: Delius, Walter Turncoat, Permanent Marker*/
+@import url('http://fonts.googleapis.com/css?family=Delius|Walter+Turncoat|Permanent+Marker');
+/*fontawesome icon font*/
+@import url('http://thecodeplayer.com/uploads/fonts/font-awesome-4.1.0/css/font-awesome.min.css');
+/*lorem-ipsum fonts: Redacted Script*/
+@font-face {
+    font-family: 'Redacted Script';
+    src: url("redacted-font/fonts/web/redacted-script-light.eot");
+    src: url("redacted-font/fonts/web/redacted-script-light.woff2") format("woff2"),
+         url("redacted-font/fonts/web/redacted-script-light.woff") format("woff"),
+         url("redacted-font/fonts/web/redacted-script-light.otf") format("opentype"),
+         url("redacted-font/fonts/web/redacted-script-light.svg#filename") format("svg");
+}
+/* sketch fonts */
+@font-face {
+    font-family: 'Karabine';
+    src: url('fonts/karabine/karabine.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Sketchy';
+    src: url('fonts/sketchy/sketchy.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Urban Sketch';
+    src: url('fonts/urban-sketch/urban.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'Tusj';
+    src: url('fonts/tusj/tusj.ttf')  format('truetype');
+}
+
+.lorem-ipsum {
+    font-family: 'Redacted Script';
+    font-size: 32px;
+    z-index: 100;
+}
