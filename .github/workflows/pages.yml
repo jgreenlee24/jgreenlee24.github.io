@@ -1,4 +1,4 @@
-name: Deploy Vue site to GitHub Pages
+name: Deploy portfolio to GitHub Pages
 
 on:
   push:
@@ -22,12 +22,8 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci --ignore-scripts --no-audit --no-fund
-      - name: Build the archived Vue app
-        env:
-          NODE_OPTIONS: --openssl-legacy-provider
-        run: |
-          npm run build
-          cp dist/index.html dist/404.html
+      - name: Build the React portfolio
+        run: npm run build
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
