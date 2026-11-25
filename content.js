@@ -4,7 +4,7 @@ export const profile = {
   heading: 'Hi, I’m Justin.',
   intro: 'I’m a software engineer in Dallas. I build websites for small businesses, and I’m starting Scatterbrain Labs because I miss trying a weird idea just to see what happens.',
   philosophy: 'I get the same feeling running D&D. I’ll spend a week building a world, and my friends will show up and do the one thing I didn’t plan for. That’s usually when it gets good.',
-  currently: 'building Pathlings, shaping Scatterbrain Labs, and making small websites for real people.',
+  currently: 'building Pathlings, shaping Scatterbrain Labs, and making awesome websites for local businesses.',
   about: [
     'I run two homebrew D&D campaigns. I like making places that feel real enough for my friends to get curious about, then finding out which little detail they latch onto. Sometimes it’s the thing I made up ten seconds ago.',
     'I also play guitar and piano, and I spend a lot of time outside with Lala. She doubles back on hikes to make sure I’m keeping up. Usually I’m not.',
