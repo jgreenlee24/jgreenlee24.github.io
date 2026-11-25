@@ -1,85 +1,18 @@
-# Portfolio - jgreenlee24.github.io
+# Justin Greenlee
 
-[![Author][]()
-[![Software License][]()
-[![Tag][]()
-[![npm downloads][]()
-[![Codacy Badge][]()
+Personal portfolio built with React and Vite. The site is static, does not use a backend, and does not make third-party requests while loading.
 
-## Getting started
+## Local development
 
-This is a basic VueJs, Vuetify, Vue Router and Vuex skeleton written on JavaScript using async/await. Great for building a starter web app.
+Use Node.js 22.12 or later.
 
-This project is created to help other developers create a **basic VueJS app in an easy way**. This basic example shows how powerful and simple JavaScript and VueJS can be. Do you want to contribute? Pull requests are always welcome to show more features.
-
--   Vuetify
--   Multiple environment ready (development, production).
--   Vue router
--   Vuex
--   i18n ready.
--   Google Analytics ready.
--   Ready to add to home screen in iOS and Chrome, checks if there´s an app update every 2 hours and reloads page (When a web app is added as stand alone there´s no reload button in the browser so new .js files from a new build never get loaded)
--   Landing page.
--   Protected home page.
--   Login.
--   Signup.
--   Forgot password.
--   Account verification.
--   User profile.
--   Users admin area with CRUD operations.
--   Testing with Cypress and mocha/chai.
--   NPM script for keeping good source code formatting using prettier and ESLint.
--   Use of ESLint for good coding practices.
--   Use of prettier for beautiful format.
--   Ability to refresh token
--   JWT Tokens, make requests with a token after login with `Authorization` header with value `Bearer yourToken` where `yourToken` is the **signed and encrypted token** given in the response from the login process.
-
-### Compiles and hot-reloads for development
-
-```bash
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```bash
+```sh
+npm ci
+npm run dev
 npm run build
+npm run preview
 ```
 
-### Run your tests
+Edit portfolio copy and links in `content.js`. Images are optimized and served with the build. GitHub Pages builds and deploys `dist/` from the repository’s default branch with the workflow in `.github/workflows/pages.yml`.
 
-```bash
-npm run test
-```
-
-### Lints and fixes files
-
-```bash
-npm run lint
-```
-
-### Formatting markdown files
-
-```bash
-npm run remark
-```
-
-### Run your end-to-end tests
-
-```bash
-npm run test:e2e
-```
-
-### Run your unit tests
-
-```bash
-npm run test:unit
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-## Bugs or improvements
-
-Feel free to report any bugs or improvements. Pull requests are always welcome.
+The preceding Vue app is preserved in [legacy-vue-app](https://github.com/jgreenlee24/legacy-vue-app).
