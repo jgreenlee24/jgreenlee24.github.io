@@ -18,7 +18,8 @@ export const projects = [
     id: 'scatterbrain-labs',
     theme: 'scatterbrain',
     name: 'Scatterbrain Labs',
-    summary: 'An independent studio and public lab for rediscovering the joy of making things.',
+    category: 'Studio & creative lab',
+    summary: 'An independent studio and public lab for rediscovering the joy of making things through small experiments in software, games, and design.',
     status: 'In development',
     details: [
       'I’ve spent years building software for other people. I wanted a place to follow my own curiosity, so I’m building a public lab for small experiments in software, games, and interactive design. I want to share the messy middle as well as the result: what I tried, what surprised me, and what someone else might want to try for themselves.',
@@ -29,7 +30,8 @@ export const projects = [
     id: 'pathlings',
     theme: 'pathlings',
     name: 'Pathlings',
-    summary: 'A gentle companion for planning your day and remembering what else it could hold.',
+    category: 'Personal app',
+    summary: 'An app I’m building to help you plan your day, reflect, and remember what else it could hold.',
     status: 'In development',
     details: [
       'I started designing Pathlings because I needed it myself. You check in with how you feel, what’s on your plate, and what you want more of. It helps you find a way through the day that fits, including things you care about but might not remember to put on a list.',
@@ -40,6 +42,7 @@ export const projects = [
     id: 'create-landscapes-dfw',
     theme: 'landscapes',
     name: 'Create Landscapes DFW',
+    category: 'Client website',
     summary: 'A landscaping website built to turn visits into quote requests.',
     status: 'Live',
     open: true,

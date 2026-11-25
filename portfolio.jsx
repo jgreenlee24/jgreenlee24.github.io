@@ -41,12 +41,17 @@ function LinkMark() {
   )
 }
 
+function SectionLabel({ children }) {
+  return <p className="section-label">{children}</p>
+}
+
 function Project({ project }) {
   return (
     <article className={`project project--${project.theme}`} id={project.id} aria-labelledby={`${project.id}-title`}>
       <div className="section-inner">
         <div className="project-grid">
           <div className="project-copy">
+            <SectionLabel>{project.category}</SectionLabel>
             <h3 id={`${project.id}-title`}>{project.theme === 'landscapes' ? <>Create<br />Landscapes DFW</> : project.name}</h3>
             <p>{project.summary}</p>
             {project.theme === 'scatterbrain' && <span className="yellow-stroke" aria-hidden="true" />}
@@ -73,6 +78,7 @@ function SkillList() {
   return (
     <section className="skills page-section" aria-labelledby="skills-title">
       <div className="section-inner">
+        <SectionLabel>Toolkit</SectionLabel>
         <h2 id="skills-title">What I build with</h2>
         <dl>
           {skills.map(({ group, items }) => (
@@ -109,18 +115,21 @@ function App() {
         <SkillList />
         <section className="page-section page-section--about" id="about" aria-labelledby="about-title">
           <div className="section-inner">
+            <SectionLabel>Off the clock</SectionLabel>
             <h2 id="about-title">A little more about me</h2>
             <div className="readable">{profile.about.map((line) => <p key={line}>{line}</p>)}</div>
           </div>
         </section>
         <section className="page-section" id="blog" aria-labelledby="blog-title">
           <div className="section-inner">
+            <SectionLabel>Writing</SectionLabel>
             <h2 id="blog-title">Blog <span className="upcoming">Coming soon</span></h2>
             <p>Notes on things I’m making and what I learn along the way.</p>
           </div>
         </section>
         <section className="page-section page-section--contact" id="contact" aria-labelledby="contact-title">
           <div className="section-inner">
+            <SectionLabel>Say hello</SectionLabel>
             <h2 id="contact-title">Find me online</h2>
             <ul className="contact-links">
               <li><a href={profile.github}>GitHub <LinkMark /></a></li>
