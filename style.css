@@ -500,3 +500,54 @@ h1, h2, h3 { text-wrap: balance; }
   background: #79b5ff;
   box-shadow: 0 0 0.24em rgb(116 183 255 / 48%);
 }
+
+.contact-links { gap: 0.5rem 0.75rem; }
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 0.42rem;
+  padding: 0.46rem 0.72rem;
+  border: 1px solid #c8c7b5;
+  border-radius: 0.32rem;
+  background: rgb(255 251 242 / 52%);
+  text-decoration: none;
+}
+.contact-links a:hover { background: #fffaf0; text-decoration: underline; }
+.contact-icon { flex: none; width: 1.1em; height: 1.1em; }
+.contact-links .link-mark { margin-inline-start: 0.08rem; opacity: 0.7; }
+
+.site-footer {
+  border-top: 1px solid #475459;
+  background:
+    radial-gradient(ellipse at 95% 0%, #263634, transparent 72%),
+    #111921;
+  padding-block: clamp(1.55rem, 3.6vw, 3rem);
+}
+.site-footer::before { mix-blend-mode: screen; opacity: 0.25; }
+.site-footer .section-inner {
+  align-items: center;
+  color: #eee3d2;
+  font-size: 0.93rem;
+  gap: 1.35rem 2rem;
+}
+.footer-signoff { margin-inline-start: auto; text-align: right; }
+.footer-name {
+  color: #fff3df;
+  font: 650 clamp(1.35rem, 3vw, 2.1rem)/1.1 var(--heading);
+  letter-spacing: -0.035em;
+  margin-bottom: 0.4rem;
+}
+.footer-coffee { display: flex; align-items: center; gap: 0.65rem; color: #f5ddb2; }
+.footer-coffee svg { flex: none; width: 1.65rem; height: 1.65rem; }
+.footer-coffee small {
+  display: block;
+  color: #d3c6b3;
+  font-size: 0.73rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+@media (max-width: 500px) {
+  .site-footer .section-inner { flex-direction: column; align-items: flex-end; text-align: right; }
+  .footer-coffee { flex-direction: row-reverse; }
+}

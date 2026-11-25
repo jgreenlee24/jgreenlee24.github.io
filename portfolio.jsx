@@ -41,6 +41,25 @@ function LinkMark() {
   )
 }
 
+function ContactIcon({ kind }) {
+  return (
+    <svg className="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+      {kind === 'github' && <>
+        <path d="M8.5 19c-3.6 1.1-3.4-2.6-5.5-3.2M15.5 21v-3.6c0-1-.3-1.7-.8-2.2 3.1-.4 5.3-1.5 5.3-5a4 4 0 0 0-1.1-2.9c.3-1 .3-2.2-.2-3.3-1.2 0-2.3.5-3.2 1.2a11 11 0 0 0-7 0C7.6 4.5 6.5 4 5.3 4c-.5 1.1-.5 2.3-.2 3.3A4 4 0 0 0 4 10.2c0 3.5 2.2 4.6 5.3 5-.5.5-.8 1.2-.8 2.2V21"/>
+      </>}
+      {kind === 'linkedin' && <>
+        <rect x="3" y="3" width="18" height="18" rx="3" />
+        <path d="M8 10.5v6m4-6v6m0-3.5a2.5 2.5 0 0 1 5 0v3.5" />
+        <circle cx="8" cy="7.5" r=".65" fill="currentColor" stroke="none" />
+      </>}
+      {kind === 'email' && <>
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="m3.5 7.5 8.5 6 8.5-6" />
+      </>}
+    </svg>
+  )
+}
+
 function SectionLabel({ children }) {
   return <p className="section-label">{children}</p>
 }
@@ -134,15 +153,22 @@ function App() {
             <SectionLabel>Say hello</SectionLabel>
             <h2 id="contact-title">Find me online</h2>
             <ul className="contact-links">
-              <li><a href={profile.github}>GitHub <LinkMark /></a></li>
-              <li><a href={profile.linkedin}>LinkedIn <LinkMark /></a></li>
-              <li><a href={profile.email}>Email me <LinkMark /></a></li>
+              <li><a href={profile.github}><ContactIcon kind="github" /><span>GitHub</span> <LinkMark /></a></li>
+              <li><a href={profile.linkedin}><ContactIcon kind="linkedin" /><span>LinkedIn</span> <LinkMark /></a></li>
+              <li><a href={profile.email}><ContactIcon kind="email" /><span>Email me</span> <LinkMark /></a></li>
             </ul>
           </div>
         </section>
         <footer className="site-footer">
           <div className="section-inner">
-            <span>{profile.name}</span>
+            <div className="footer-coffee">
+              <Coffee />
+              <p>Buy me a coffee <small>Coming later</small></p>
+            </div>
+            <div className="footer-signoff">
+              <p className="footer-name">{profile.name}</p>
+              <p>Made in Dallas, one experiment at a time.</p>
+            </div>
           </div>
         </footer>
       </main>
