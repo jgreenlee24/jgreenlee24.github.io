@@ -464,3 +464,39 @@ h1, h2, h3 { text-wrap: balance; }
   background: #62c47a;
   box-shadow: 0 0 0.24em rgb(117 255 154 / 50%);
 }
+
+/* Project status uses the same CRT prompt treatment at badge scale. */
+.status:not(.status--live) {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.48em;
+  padding: 0.31em 0.55em;
+  border: 1px solid #293e58;
+  border-radius: 0.22rem;
+  background-color: #090d13;
+  background-image: repeating-linear-gradient(
+    to bottom, transparent 0 2px, rgb(134 190 255 / 9%) 2px 3px, transparent 3px 4px
+  );
+  box-shadow: inset 0 0 0.75em rgb(74 137 219 / 18%);
+  color: #9accff;
+  font-family: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  font-size: clamp(0.72rem, 1.25vw, 0.93rem);
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  text-shadow: 0 0 0.28em rgb(116 183 255 / 34%);
+}
+.status:not(.status--live)::before {
+  content: '';
+  width: 0.31em;
+  height: 0.31em;
+  border-block-start: 0.1em solid #79b5ff;
+  border-inline-end: 0.1em solid #79b5ff;
+  transform: translateY(-0.13em) rotate(45deg);
+}
+.status:not(.status--live)::after {
+  content: '';
+  width: 0.36em;
+  height: 0.12em;
+  background: #79b5ff;
+  box-shadow: 0 0 0.24em rgb(116 183 255 / 48%);
+}
