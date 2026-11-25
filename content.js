@@ -4,6 +4,7 @@ export const profile = {
   heading: 'Hi, I’m Justin.',
   intro: 'I’m a software engineer in Dallas. I build websites for small businesses, and I’m starting Scatterbrain Labs because I miss trying a weird idea just to see what happens.',
   philosophy: 'I get the same feeling running D&D. I’ll spend a week building a world, and my friends will show up and do the one thing I didn’t plan for. That’s usually when it gets good.',
+  currently: 'building Pathlings, shaping Scatterbrain Labs, and making small websites for real people.',
   about: [
     'I run two homebrew D&D campaigns. I like making places that feel real enough for my friends to get curious about, then finding out which little detail they latch onto. Sometimes it’s the thing I made up ten seconds ago.',
     'I also play guitar and piano, and I spend a lot of time outside with Lala. She doubles back on hikes to make sure I’m keeping up. Usually I’m not.',
@@ -19,10 +20,10 @@ export const projects = [
     theme: 'scatterbrain',
     name: 'Scatterbrain Labs',
     category: 'Studio & creative lab',
-    summary: 'An independent studio and public lab for rediscovering the joy of making things through small experiments in software, games, and design.',
+    summary: 'An independent studio and public lab for producing small experiments in software, games, and design.',
     status: 'In development',
     details: [
-      'I’ve spent years building software for other people. I wanted a place to follow my own curiosity, so I’m building a public lab for small experiments in software, games, and interactive design. I want to share the messy middle as well as the result: what I tried, what surprised me, and what someone else might want to try for themselves.',
+      'I’ve spent years building software for other people. I wanted a place to follow my own curiosity and rediscover the joy of making things. I want to share the experiments as they take shape, messy middle included: what I tried, what surprised me, and what someone else might want to try for themselves.',
       'The studio helps make that possible. I work with small businesses and creators to turn something they care about into a website, app, or prototype.',
     ],
   },

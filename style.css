@@ -406,3 +406,20 @@ h1, h2, h3 { text-wrap: balance; }
 @media (max-width: 780px) {
   .portrait { outline-offset: 2px; }
 }
+
+.hero p.hero-currently {
+  border-inline-start: 2px solid #a28859;
+  color: #514939;
+  font-size: clamp(0.89rem, 1.4vw, 1rem);
+  line-height: 1.45;
+  margin-top: 1.15rem;
+  max-width: 41rem;
+  padding-inline-start: 0.7rem;
+}
+.hero-currently strong { font-weight: 700; }
+.section-anchor { position: absolute; inset-block-start: 0; }
+@media (max-width: 360px) {
+  .sidebar nav { column-gap: 0.6rem; }
+  .sidebar nav a { font-size: 0.875rem; }
+  .sidebar nav a span { padding-inline: 0.31rem; }
+}

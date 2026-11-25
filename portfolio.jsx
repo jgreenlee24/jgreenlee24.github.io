@@ -18,7 +18,7 @@ function Sidebar() {
         <nav aria-label="Portfolio">
           <a href="#work">Work</a>
           <a href="#about">About</a>
-          <a href="#blog">Blog <span>Coming soon</span></a>
+          <a href="#lab-notes">Lab Notes <span>Coming soon</span></a>
           <a href="#contact">Contact</a>
         </nav>
         <div className="coffee"><Coffee /><span>fueled by coffee</span></div>
@@ -106,6 +106,7 @@ function App() {
             <h1 id="hero-title">{profile.heading}</h1>
             <p>{profile.intro}</p>
             <p className="hero-note">{profile.philosophy}</p>
+            <p className="hero-currently"><strong>Currently:</strong> {profile.currently}</p>
           </div>
         </section>
         <section id="work" aria-labelledby="work-title">
@@ -120,11 +121,12 @@ function App() {
             <div className="readable">{profile.about.map((line) => <p key={line}>{line}</p>)}</div>
           </div>
         </section>
-        <section className="page-section" id="blog" aria-labelledby="blog-title">
+        <section className="page-section" id="lab-notes" aria-labelledby="lab-notes-title">
+          <span id="blog" className="section-anchor" aria-hidden="true" />
           <div className="section-inner">
-            <SectionLabel>Writing</SectionLabel>
-            <h2 id="blog-title">Blog <span className="upcoming">Coming soon</span></h2>
-            <p>Notes on things I’m making and what I learn along the way.</p>
+            <SectionLabel>Lab Notes</SectionLabel>
+            <h2 id="lab-notes-title">Lab Notes <span className="upcoming">Coming soon</span></h2>
+            <p>Small field notes from the workbench: things I’m building, lessons I’m learning, and ideas I’m not ready to leave alone yet.</p>
           </div>
         </section>
         <section className="page-section page-section--contact" id="contact" aria-labelledby="contact-title">
