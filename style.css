@@ -292,3 +292,66 @@ main { min-width: 0; }
   .skill-row + .skill-row { margin-top: 1.12rem; }
   .skill-row dt { font-size: 1.23rem; }
 }
+
+/* A little ink and paper across the project stack. Decorative layers never take focus. */
+main {
+  --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 192 192' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23000' filter='url(%23n)' opacity='.23' d='M0 0h192v192H0z'/%3E%3C/svg%3E");
+  --ink-lines: url("data:image/svg+xml,%3Csvg viewBox='0 0 560 248' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23536273' stroke-width='1.2'%3E%3Cpath d='M-10 214C112 238 125 114 250 137S371 252 570 104M-10 193C98 216 136 97 258 118s136 110 312-35M-10 172C99 194 144 77 268 100s146 90 302-37M-10 151C107 175 149 58 279 82s150 75 291-39M-10 130C105 153 146 40 291 62s154 59 279-42M-10 109C102 128 156 25 306 42s148 41 264-44'/%3E%3C/svg%3E");
+  position: relative;
+  isolation: isolate;
+}
+.hero, .project, .page-section, .site-footer { position: relative; }
+.hero .section-inner, .project .section-inner, .page-section .section-inner, .site-footer .section-inner { position: relative; z-index: 2; }
+.hero::before, .project::before, .page-section::before, .site-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--grain) repeat 0 0 / 12rem 12rem;
+  mix-blend-mode: multiply;
+  opacity: .32;
+  pointer-events: none;
+}
+.project--pathlings::before { mix-blend-mode: screen; opacity: .35; }
+.hero::after, .project::after, .page-section--about::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  inset: auto 0 calc(-1 * clamp(2.1rem, 4.5vw, 4.5rem)) auto;
+  width: min(58%, 40rem);
+  height: clamp(5.75rem, 14vw, 11rem);
+  background: var(--ink-lines) no-repeat right center / 100% 100%;
+  -webkit-mask-image: linear-gradient(to left, black 36%, transparent);
+  mask-image: linear-gradient(to left, black 36%, transparent);
+  opacity: .33;
+}
+.project--scatterbrain::after { width: min(53%, 34rem); opacity: .43; }
+.project--pathlings::after { opacity: .5; }
+.project--landscapes::after, .page-section--about::after { opacity: .26; }
+.project--pathlings {
+  background: radial-gradient(ellipse at 17% 43%, #3c5735, transparent 60%),
+    radial-gradient(ellipse at 83% 114%, #182d1e, transparent 70%), #28432d;
+}
+.project--scatterbrain {
+  background: radial-gradient(ellipse at 40% 27%, #fff9f7, transparent 66%),
+    linear-gradient(112deg, #f8dce9, #fcf4f3 53%, #dce2ff);
+}
+.hero { padding-bottom: clamp(2.65rem, 5.5vw, 5rem); }
+.page-section + .page-section { border-top-color: #e8dbca; }
+
+@media (max-width: 780px) {
+  .hero { padding-bottom: 2.4rem; }
+  .hero::after, .project::after, .page-section--about::after {
+    width: min(68%, 27rem);
+    height: clamp(4rem, 13vw, 7rem);
+    bottom: -1.55rem;
+    opacity: .27;
+  }
+}
+@media (max-width: 500px) {
+  .hero::after, .project::after, .page-section--about::after {
+    width: 54%;
+    height: 3.85rem;
+    bottom: -1.02rem;
+  }
+}

@@ -132,7 +132,6 @@ function App() {
         <footer className="site-footer">
           <div className="section-inner">
             <span>{profile.name}</span>
-            <a href={profile.legacy}>Vue site archive <LinkMark /></a>
           </div>
         </footer>
       </main>

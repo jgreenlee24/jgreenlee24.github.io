@@ -15,4 +15,3 @@ npm run preview
 
 Edit portfolio copy and links in `content.js`. Images are optimized and served with the build. GitHub Pages builds and deploys `dist/` from the repository’s default branch with the workflow in `.github/workflows/pages.yml`.
 
-The preceding Vue app is preserved in [legacy-vue-app](https://github.com/jgreenlee24/legacy-vue-app).
