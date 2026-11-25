@@ -67,20 +67,28 @@ function Project({ project }) {
   return (
     <article className={`project project--${project.theme}`} id={project.id} aria-labelledby={`${project.id}-title`}>
       <div className="section-inner">
+        <p className="project-tagline">
+          {project.tagline}
+          {project.theme === 'landscapes' && (
+            <svg className="tagline-vine" viewBox="0 0 54 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M1 20c13 3 22-1 28-7 5-5 8-7 15-9M30 12c0-5-2-7-7-8 0 5 3 8 7 8ZM39 6c4 1 9-1 13-5-7-1-11 1-13 5Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          )}
+        </p>
         <div className="project-grid">
           <div className="project-copy">
-            <SectionLabel>{project.category}</SectionLabel>
-            <h3 id={`${project.id}-title`}>{project.theme === 'landscapes' ? <>Create<br />Landscapes DFW</> : project.name}</h3>
+            <h3 id={`${project.id}-title`}>{project.name}</h3>
             <p>{project.summary}</p>
-            {project.theme === 'scatterbrain' && <span className="yellow-stroke" aria-hidden="true" />}
-            <span className={`status ${project.open ? 'status--live' : ''}`}>{project.status}</span>
+            <span className={`status ${project.status === 'Live' ? 'status--live' : ''}`}>{project.status}</span>
           </div>
-          <ProjectArtwork theme={project.theme} />
+          <div className="project-frame"><ProjectArtwork theme={project.theme} /></div>
         </div>
-        <details className="project-details" open={project.open || undefined}>
-          <summary aria-label={`Project details: ${project.name}`}>
-            <span className="detail-switch" aria-hidden="true" />
-            Project details
+        <details className="project-details">
+          <summary aria-label={`Project notes: ${project.name}`}>
+            Project notes
+            <svg className="detail-chevron" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <path d="m3.5 6 4.5 4.5L12.5 6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </summary>
           <div className="detail-body">
             {project.details.map((part) => <p key={part}>{part}</p>)}
@@ -121,10 +129,14 @@ function App() {
       <main id="main" tabIndex="-1">
         <section className="hero" id="top" aria-labelledby="hero-title">
           <div className="section-inner">
-            <h1 id="hero-title">{profile.heading}</h1>
-            <p>{profile.intro}</p>
-            <p className="hero-note">{profile.philosophy}</p>
-            <p className="hero-currently"><strong>Currently:</strong> {profile.currently}</p>
+            <div className="intro-card">
+              <p className="intro-label">Full stack developer / Dallas, TX</p>
+              <h1 id="hero-title">{profile.heading}</h1>
+              <p>{profile.intro}</p>
+              <p>{profile.studio}</p>
+            </div>
+            <p className="hero-mission">{profile.mission}</p>
+            <p className="hero-lead">Most days, that means…</p>
           </div>
         </section>
         <section id="work" aria-labelledby="work-title">

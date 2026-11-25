@@ -2,9 +2,9 @@ export const profile = {
   name: 'Justin Greenlee',
   role: 'Senior full stack developer in Dallas',
   heading: 'Hi, I’m Justin.',
-  intro: 'I’m a senior full stack developer in Dallas. I build websites for small businesses, and I’m starting Scatterbrain Labs because I miss trying a weird idea just to see what happens.',
-  philosophy: 'I get the same feeling running D&D. I’ll spend a week building a world, and my friends will show up and do the one thing I didn’t plan for. That’s usually when it gets good.',
-  currently: 'building Pathlings, shaping Scatterbrain Labs, and making awesome websites for local businesses.',
+  intro: 'I’m a senior full stack developer in Dallas. I like the part where someone asks, “Could we actually make that?” and we sit down together to find out.',
+  studio: 'That’s why I started Scatterbrain Labs, an independent creative technology studio and public lab. We turn half-formed ideas into apps, websites, games, and tools, and share how they take shape so we can learn together.',
+  mission: 'I’m here to invite people back into the joy of creating.',
   about: [
     'I run two homebrew D&D campaigns. I like making places that feel real enough for my friends to get curious about, then finding out which little detail they latch onto. Sometimes it’s the thing I made up ten seconds ago.',
     'I also play guitar and piano, and I spend a lot of time outside with Lala. She doubles back on hikes to make sure I’m keeping up. Usually I’m not.',
@@ -19,7 +19,7 @@ export const projects = [
     id: 'scatterbrain-labs',
     theme: 'scatterbrain',
     name: 'Scatterbrain Labs',
-    category: 'Studio & creative lab',
+    tagline: '…giving half-formed ideas room to grow.',
     summary: 'An independent studio and public lab for producing small experiments in software, games, and design.',
     status: 'In development',
     details: [
@@ -31,7 +31,7 @@ export const projects = [
     id: 'pathlings',
     theme: 'pathlings',
     name: 'Pathlings',
-    category: 'Personal app',
+    tagline: '…building a gentler way to plan the day.',
     summary: 'An app I’m building to help you plan your day, reflect, and remember what else it could hold.',
     status: 'In development',
     details: [
@@ -43,10 +43,9 @@ export const projects = [
     id: 'create-landscapes-dfw',
     theme: 'landscapes',
     name: 'Create Landscapes DFW',
-    category: 'Client website',
+    tagline: '…making awesome websites for local businesses.',
     summary: 'A landscaping website built to turn visits into quote requests.',
     status: 'Live',
-    open: true,
     details: [
       'I built the WordPress site for the seasonal launch and connected the quote form to HubSpot so new requests become leads.',
     ],
