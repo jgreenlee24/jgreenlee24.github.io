@@ -524,3 +524,19 @@ h1, h2, h3 { text-wrap: balance; }
     radial-gradient(ellipse at 40% 27%, #fff9f7, transparent 66%),
     linear-gradient(112deg, #f8dce9, #fcf4f3 53%, #dce2ff);
 }
+
+.footer-social {
+  display: flex;
+  justify-content: flex-end;
+  margin-block-start: 0.35rem;
+  margin-inline-end: -0.65rem;
+}
+.site-footer .footer-social a {
+  display: inline-grid;
+  place-items: center;
+  min-width: 40px;
+  min-height: 44px;
+  color: #fff;
+}
+.footer-social .contact-icon { width: 1rem; height: 1rem; }
+.footer-social a:hover .contact-icon { opacity: 0.78; }

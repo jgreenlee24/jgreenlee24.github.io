@@ -26,9 +26,10 @@ export function Trail() {
   )
 }
 
-export function Coffee() {
+export function Coffee({ steam = false } = {}) {
   return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+    <svg viewBox={steam ? "0 -8 32 40" : "0 0 32 32"} aria-hidden="true" focusable="false">
+      {steam && <path className="coffee-steam" d="M11 3c3-3-2-4 0-8m6 8c3-3-2-4 0-8" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />}
       <path d="M5 10c0-2 4-4 9-4s9 2 9 4v17c0 2-4 4-9 4s-9-2-9-4V10Zm0 0c0 2 4 4 9 4s9-2 9-4m1 5h2a5 5 0 1 1 0 10h-2" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )

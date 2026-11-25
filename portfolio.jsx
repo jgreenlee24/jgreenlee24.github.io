@@ -162,12 +162,17 @@ function App() {
         <footer className="site-footer">
           <div className="section-inner">
             <div className="footer-coffee">
-              <Coffee />
+              <Coffee steam />
               <p>Buy me a coffee <small>Coming later</small></p>
             </div>
             <div className="footer-signoff">
               <p className="footer-name">{profile.name}</p>
               <p>Made in Dallas, one experiment at a time.</p>
+              <nav className="footer-social" aria-label="Footer contact links">
+                <a href={profile.github} aria-label="GitHub"><ContactIcon kind="github" /></a>
+                <a href={profile.linkedin} aria-label="LinkedIn"><ContactIcon kind="linkedin" /></a>
+                <a href={profile.email} aria-label="Email me"><ContactIcon kind="email" /></a>
+              </nav>
             </div>
           </div>
         </footer>
