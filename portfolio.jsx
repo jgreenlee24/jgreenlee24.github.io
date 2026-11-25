@@ -21,7 +21,6 @@ function Sidebar() {
           <a href="#lab-notes">Lab Notes <span>Coming soon</span></a>
           <a href="#contact">Contact</a>
         </nav>
-        <div className="coffee"><Coffee /><span>fueled by coffee</span></div>
       </div>
     </aside>
   )

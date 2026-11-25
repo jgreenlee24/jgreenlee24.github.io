@@ -1,8 +1,8 @@
 export const profile = {
   name: 'Justin Greenlee',
-  role: 'Software engineer in Dallas',
+  role: 'Senior full stack developer in Dallas',
   heading: 'Hi, I’m Justin.',
-  intro: 'I’m a software engineer in Dallas. I build websites for small businesses, and I’m starting Scatterbrain Labs because I miss trying a weird idea just to see what happens.',
+  intro: 'I’m a senior full stack developer in Dallas. I build websites for small businesses, and I’m starting Scatterbrain Labs because I miss trying a weird idea just to see what happens.',
   philosophy: 'I get the same feeling running D&D. I’ll spend a week building a world, and my friends will show up and do the one thing I didn’t plan for. That’s usually when it gets good.',
   currently: 'building Pathlings, shaping Scatterbrain Labs, and making awesome websites for local businesses.',
   about: [
